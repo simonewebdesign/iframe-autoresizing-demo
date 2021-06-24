@@ -14,8 +14,7 @@
     <script>
         window.addEventListener('message', e => {
             console.log('[main] received message', e.data)
-
-            document.querySelector('iframe').style.height = (e.data.increased || e.data.decreased) + 'px'
+            document.querySelector('iframe').style.height = e.data.newHeight + 'px'
         })
     </script>
 </body>
