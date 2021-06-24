@@ -8,5 +8,21 @@
 </head>
 <body>
     <h1>I'm an iframe</h1>
+    <button onclick=increase()>Increase my height by 100px</button>
+    <button onclick=decrease()>Decrease my height by 100px</button>
+    <script>
+        console.log('[iframe] starting height', document.body.clientHeight)
+
+        function increase() {
+            console.log('[iframe] increasing height...', document.body.clientHeight)
+            document.body.style.height = document.body.clientHeight + 100 + 'px'
+            console.log('[iframe] height increased to', document.body.clientHeight)
+        }
+        function decrease() {
+            console.log('[iframe] decreasing height...', document.body.clientHeight)
+            document.body.style.height = document.body.clientHeight - 100 + 'px'
+            console.log('[iframe] height decreased to', document.body.clientHeight)
+        }
+    </script>
 </body>
 </html>
