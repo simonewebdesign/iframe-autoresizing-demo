@@ -17,11 +17,16 @@
             console.log('[iframe] increasing height...', document.body.clientHeight)
             document.body.style.height = document.body.clientHeight + 100 + 'px'
             console.log('[iframe] height increased to', document.body.clientHeight)
+            sendMessageToParent({ increased: document.body.clientHeight })
         }
         function decrease() {
             console.log('[iframe] decreasing height...', document.body.clientHeight)
             document.body.style.height = document.body.clientHeight - 100 + 'px'
             console.log('[iframe] height decreased to', document.body.clientHeight)
+            sendMessageToParent({ decreased: document.body.clientHeight })
+        }
+        function sendMessageToParent(msg) {
+            parent.postMessage(msg, '*')
         }
     </script>
 </body>

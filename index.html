@@ -10,5 +10,11 @@
     <h1>I'm the parent document</h1>
     <iframe src="http://example.com:8000/iframe.html"></iframe>
     <footer>I'm a footer</footer>
+
+    <script>
+        window.addEventListener('message', e => {
+            console.log('[main] received message', e.data)
+        })
+    </script>
 </body>
 </html>
